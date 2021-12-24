@@ -1,0 +1,203 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    font-size: 0.8em;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#header {
+    width: 100%;
+    height: 35px;
+    display: inline-block;
+}
+
+#content {
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+.panel {
+    display: inline-block;
+    border: 1px dotted #AAA;
+    overflow: scroll;
+
+    background: /* Shadow covers */ linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%;
+
+    background: /* Shadow covers */ linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+        /* Shadows */ radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+    radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+
+    /* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #AAA;
+    shape-rendering: crispEdges;
+}
+
+.baxis path,
+.baxis line {
+    fill: none;
+    stroke: #AAA;
+    shape-rendering: crispEdges;
+}
+
+.tick line {
+    opacity: 0.2;
+}
+
+.tick text {
+    fill: #AAA;
+    text-transform: capitalize;
+}
+
+::-webkit-scrollbar {
+
+    display: none;
+}
+
+text {
+    text-transform: capitalize;
+}
+
+#annotation-form .annotationBox{
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /*-webkit-box-shadow: 4px 2px 8px 8px rgba(156, 156, 156, 1);*/
+    /*-moz-box-shadow: 4px 2px 8px 8px rgba(156, 156, 156, 1);*/
+    /*box-shadow: 4px 2px 8px 4px rgba(156, 156, 156, 1);*/
+}
+
+fieldset {
+    border: solid 1px #000;
+    padding: 10px;
+    display: block;
+    clear: both;
+    margin: 5px 0px;
+}
+
+legend {
+    padding: 0px 10px;
+    background: black;
+    color: #FFF;
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.star-title {
+    font-size: 14px;
+}
+
+.star-label {
+    font-size: 11px;
+    pointer-events: none;
+}
+
+.star-origin {
+    fill: #333;
+}
+
+.star-axis {
+    stroke: #ccc;
+    stroke-width: 2px;
+    stroke-dasharray: 4 5;
+}
+
+.star-path {
+    stroke: #444;
+    stroke-width: 2px;
+    fill: #709CB1;
+    fill-opacity: 0.6;
+}
+
+.star-interaction {
+    opacity: 0;
+}
+
+.interaction {
+    pointer-events: none;
+}
+
+.interaction.label {
+    position: absolute;
+    font-size: 11px;
+    text-shadow: 0 1px 0 #FFF, 0 -1px 0 #FFF, 1px 0 #FFF, -1px 0 #FFF;
+}
+
+.interaction.circle {
+    fill: #444;
+    fill-opacity: 0.6;
+    stroke: #444;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -80px;
+    text-align: left;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
